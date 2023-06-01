@@ -19,7 +19,7 @@ deploy_icons:
 		for size in 16x16 24x24 48x48; do \
 			cp icons/tiger-$$size.png $(HOME)/.local/share/icons/hicolor/$$size/apps/fcitx-tiger.png; \
 		done
-	gtk-update-icon-cache -f $(HOME)/.local/share/icons/hicolor/
+	gtk-update-icon-cache -ft $(HOME)/.local/share/icons/hicolor/
 
 zip:
 	zip -j huma-fcitx.zip huma*.conf huma*.main.dict icons/fcitx-tiger.png
