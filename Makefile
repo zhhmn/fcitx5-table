@@ -6,7 +6,7 @@ build:
 	libime_tabledict huma.txt huma.main.dict
 	libime_tabledict huma-ci.txt huma-ci.main.dict
 
-deploy:
+deploy: build
 	mkdir -p $(FCITX5_USER_DIR)/inputmethod
 	cp huma{,-ci}.conf $(FCITX5_USER_DIR)/inputmethod
 	cp huma{,-ci}.main.dict $(FCITX5_USER_DIR)/table
@@ -21,5 +21,5 @@ deploy_icons:
 		done
 	gtk-update-icon-cache -ft $(HOME)/.local/share/icons/hicolor/
 
-zip:
+zip: build
 	zip -j huma-fcitx.zip huma*.conf huma*.main.dict icons/fcitx-tiger.png

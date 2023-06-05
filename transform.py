@@ -58,7 +58,7 @@ def transform_dict_single(args, output):
         core = f.read().split("...")[1]
         core_chars = {x.split("\t")[0] for x in core.splitlines()}
     entries = get_entries(os.path.join(args.folder, 'tiger.dict.yaml'), core_chars)
-    sorted(entries, key=lambda x: -x.weight)
+    entries = sorted(entries, key=lambda x: -x.weight)
     entries.extend(get_entries(os.path.join(args.folder, 'tiger.extended.dict.yaml')))
     dicts = [
         ";fcitx Version 0x03 Table file",
@@ -83,7 +83,7 @@ def transform_dict_ci(args, output):
     entries = get_entries(os.path.join(args.folder, 'tigress.dict.yaml'), core_chars)
     entries.extend(get_entries(os.path.join(args.folder, 'tigress_ci.dict.yaml')))
     # entries.extend(get_entries(os.path.join(args.folder, 'tigress_simp_ci.dict.yaml')))
-    sorted(entries, key=lambda x: -x.weight)
+    entries = sorted(entries, key=lambda x: -x.weight)
     entries.extend(get_entries(os.path.join(args.folder, 'tiger.extended.dict.yaml')))
     dicts = [
         ";fcitx Version 0x03 Table file",
