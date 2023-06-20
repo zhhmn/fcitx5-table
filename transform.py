@@ -89,6 +89,10 @@ def transform_dict_ci(args, output):
         ";fcitx Version 0x03 Table file",
         "KeyCode=abcdefghijklmnopqrstuvwxyz",
         "Length=4",
+        "[Rule]",
+        "e2=p11+p12+p21+p22",
+        "e3=p11+p21+p31+p32",
+        "a4=p11+p21+p31+n11",
         "[Data]",
     ]
     for entry in entries:
