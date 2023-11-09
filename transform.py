@@ -16,8 +16,9 @@ class Entry:
 
 def get_entries(dict: str, filters: Optional[Set[str]] = None) -> List[Entry]:
     with open(dict) as f:
-        g = yaml.safe_load_all(f)
-        spec = g.__next__()
+        # TODO: figure out who to blame (tab)
+        first_part = f.read().split('...', 1)[0]
+        spec = yaml.safe_load(first_part)
         text_idx = -1
         code_idx = -1
         weight_idx = -1
