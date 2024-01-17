@@ -5,11 +5,13 @@ build:
 	python transform.py $(HUMA_RIME_DIR)
 	libime_tabledict huma.txt huma.main.dict
 	libime_tabledict huma-ci.txt huma-ci.main.dict
+	libime_tabledict huma-full.txt huma-full.main.dict
+	libime_tabledict huma-ci-full.txt huma-ci-full.main.dict
 
 deploy: build
 	mkdir -p $(FCITX5_USER_DIR)/inputmethod
-	cp huma{,-ci}.conf $(FCITX5_USER_DIR)/inputmethod
-	cp huma{,-ci}.main.dict $(FCITX5_USER_DIR)/table
+	cp huma{,-ci}{,-full}.conf $(FCITX5_USER_DIR)/inputmethod
+	cp huma{,-ci}{,-full}.main.dict $(FCITX5_USER_DIR)/table
 
 ICON_DIR := ${HOME}/.local/share/icons/hicolor/
 APP_NAME := fcitx-tiger

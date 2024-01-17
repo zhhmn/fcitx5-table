@@ -1,5 +1,3 @@
-huma.txt
-huma-ci.txt
-huma.main.dict
-huma-ci.main.dict
+huma*.txt
+huma*.dict
 *.zip
