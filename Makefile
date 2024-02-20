@@ -23,5 +23,13 @@ deploy_icons:
 		done
 	gtk-update-icon-cache -ft $(HOME)/.local/share/icons/hicolor/
 
-zip: build
-	zip -j huma-fcitx.zip huma*.conf huma*.main.dict icons/fcitx-tiger.png
+
+ZIP_TARGETS = fcitx-huma.zip fcitx-huma-ci.zip fcitx-huma-full.zip fcitx-huma-ci-full.zip
+
+.PHONY: $(ZIP_TARGETS)
+
+zip: $(ZIP_TARGETS)
+
+$(ZIP_TARGETS):
+	$(eval PART := $(patsubst fcitx-%,%,$(@:.zip=)))
+	zip -j $@ ${PART}.conf ${PART}.main.dict icons/fcitx-tiger.png
