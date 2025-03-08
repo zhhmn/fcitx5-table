@@ -3,7 +3,7 @@ from typing import Optional, Set, List
 from dataclasses import dataclass
 import argparse
 
-import ruamel.yaml as yaml
+import yaml
 
 parser = argparse.ArgumentParser()
 parser.add_argument("folder")
